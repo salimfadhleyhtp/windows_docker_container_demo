@@ -1,8 +1,19 @@
 version: "3.9"
+
 services:
-  python:
+  web:
     build:
       target: htp_nrg_python
       context: .
+    image: htp/nrg_python
+    command:
+      - "-m"
+      - "http.server"
+      - "8000"
+      - "--bind"
+      - "0.0.0.0"
+    ports:
+    - "8000:8000"
+  python:
+    image: htp/nrg_python
     entrypoint: "python.exe"
-
