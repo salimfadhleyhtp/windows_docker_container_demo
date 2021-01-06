@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  python:
+    build:
+      target: htp_nrg_python
+      context: .
+    entrypoint: "python.exe"
+
